@@ -1,0 +1,2 @@
+# 1 line = 1 proxy. http://host:port or socks5://host:port
+# Optional: http://user:pass@host:port
