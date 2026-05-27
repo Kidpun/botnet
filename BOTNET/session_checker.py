@@ -44,7 +44,7 @@ class SessionChecker:
             if client:
                 try:
                     await client.disconnect()
-                except:
+                except Exception:
                     pass
     
     async def check_all_sessions(self, sessions_dir: str, timeout: int = 10, get_proxy_for_index=None) -> List[Tuple[str, bool, Optional[str], Optional[str]]]:

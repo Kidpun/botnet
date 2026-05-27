@@ -184,14 +184,14 @@ async def smart_mass_send_menu():
             if sender:
                 try:
                     await sender.disconnect()
-                except:
+                except Exception:
                     pass
         except KeyboardInterrupt:
             print("\n\n⚠️  Операция прервана пользователем")
             if sender:
                 try:
                     await sender.disconnect()
-                except:
+                except Exception:
                     pass
             return
         except Exception as e:
@@ -206,7 +206,7 @@ async def smart_mass_send_menu():
             if sender:
                 try:
                     await sender.disconnect()
-                except:
+                except Exception:
                     pass
     
     print("─" * 50)

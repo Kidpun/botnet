@@ -216,7 +216,7 @@ class BotParser:
                 try:
                     chat_entity = await self.client.get_entity(chat_id)
                     message = await self.client.get_messages(chat_entity, ids=message_id)
-                except:
+                except Exception:
                     try:
                         chat_entity = await self.client.get_entity(chat_id_raw)
                         message = await self.client.get_messages(chat_entity, ids=message_id)

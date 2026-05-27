@@ -129,7 +129,7 @@ async def bot_parser_menu():
                                 if send_success:
                                     return True, None
                             return False, "error"
-                        except:
+                        except Exception:
                             return False, "error"
                 except Exception as e:
                     logger.error(f"[{account_idx+1}/{len(sessions)}] {session_name} - [{chat_idx+1}/{len(chats)}]: ❌ ошибка: {str(e)[:30]}")
@@ -178,7 +178,7 @@ async def bot_parser_menu():
             if parser:
                 try:
                     await parser.disconnect()
-                except:
+                except Exception:
                     pass
             return 0, 1, 0
     

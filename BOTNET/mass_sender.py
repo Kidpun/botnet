@@ -198,12 +198,12 @@ class MassSender:
                     chat_entity = await self.client.get_entity(chat_id_raw)
                     message = await self.client.get_messages(chat_entity, ids=message_id)
                     chat_id = chat_id_raw
-                except:
+                except Exception:
                     try:
                         chat_id = -chat_id_raw
                         chat_entity = await self.client.get_entity(chat_id)
                         message = await self.client.get_messages(chat_entity, ids=message_id)
-                    except:
+                    except Exception:
                         try:
                             if chat_id_raw > 1000000000:
                                 chat_id = -1000000000000 + chat_id_raw
@@ -211,13 +211,13 @@ class MassSender:
                                 message = await self.client.get_messages(chat_entity, ids=message_id)
                             else:
                                 raise Exception("Не удалось определить формат ID")
-                        except:
+                        except Exception:
                             from telethon.tl.types import PeerChannel
                             try:
                                 peer = PeerChannel(-chat_id_raw)
                                 message = await self.client.get_messages(peer, ids=message_id)
                                 chat_id = -chat_id_raw
-                            except:
+                            except Exception:
                                 raise Exception(f"Не удалось получить доступ к чату {chat_id_raw}")
                         
             elif match_public:
@@ -292,7 +292,7 @@ class MassSender:
                             if full_channel.full_chat.restricted:
                                 logger.info(f"⏭️  Канал {chat_link} требует заявку, пропускаю")
                                 return False, f"Требуется заявка для {chat_link}", True
-                    except:
+                    except Exception:
                         pass
                     
                     try:
@@ -325,7 +325,7 @@ class MassSender:
                         try:
                             await self.client.send_message(entity, '/start')
                             return True, f"Отправил /start в {chat_link}", False
-                        except:
+                        except Exception:
                             raise join_error
                         
             except errors.UserAlreadyParticipantError:

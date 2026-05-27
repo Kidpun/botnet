@@ -351,7 +351,7 @@ async def change_name_all_menu():
             print(f"❌ [{idx}/{len(sessions)}] {session_name}: ошибка")
             try:
                 await manager.disconnect()
-            except:
+            except Exception:
                 pass
             if idx < len(sessions):
                 import random
@@ -457,7 +457,7 @@ async def change_photo_all_menu():
             print(f"❌ {session_name}: ошибка")
             try:
                 await manager.disconnect()
-            except:
+            except Exception:
                 pass
 
     print("─" * 50)
@@ -609,14 +609,14 @@ async def change_bio_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
             except KeyboardInterrupt:
                 print("\n\n⚠️  Операция прервана пользователем")
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
                 return
             except Exception as e:
@@ -631,7 +631,7 @@ async def change_bio_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
         
         print("─" * 50)
@@ -830,7 +830,7 @@ async def set_random_username_all_menu():
             print(f"❌ {session_name}: ошибка")
             try:
                 await manager.disconnect()
-            except:
+            except Exception:
                 pass
     
     print("=" * 50)
@@ -1007,21 +1007,21 @@ async def reset_other_sessions_menu():
         if security:
             try:
                 await security.disconnect()
-            except:
+            except Exception:
                 pass
     except KeyboardInterrupt:
         print("\n\n⚠️  Операция прервана")
         if security:
             try:
                 await security.disconnect()
-            except:
+            except Exception:
                 pass
     except Exception as e:
         logger.error(f"Ошибка: {e}", exc_info=True)
         if security:
             try:
                 await security.disconnect()
-            except:
+            except Exception:
                 pass
 
 
@@ -1139,13 +1139,13 @@ async def join_chat_menu():
         print("\n\n⚠️  Операция прервана")
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
     except Exception as e:
         logger.error(f"Ошибка: {e}", exc_info=True)
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
 
 
@@ -1206,14 +1206,14 @@ async def join_chat_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
             except KeyboardInterrupt:
                 print("\n\n⚠️  Операция прервана пользователем")
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
                 return
             except Exception as e:
@@ -1229,7 +1229,7 @@ async def join_chat_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
         
         print("─" * 50)
@@ -1435,13 +1435,13 @@ async def leave_chat_menu():
         print("\n\n⚠️  Операция прервана")
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
     except Exception as e:
         logger.error(f"Ошибка: {e}", exc_info=True)
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
 
 
@@ -1505,14 +1505,14 @@ async def leave_chat_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
             except KeyboardInterrupt:
                 print("\n\n⚠️  Операция прервана пользователем")
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
                 return
             except Exception as e:
@@ -1528,7 +1528,7 @@ async def leave_chat_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
         
         print("─" * 50)
@@ -1603,13 +1603,13 @@ async def send_message_menu():
         print("\n\n⚠️  Операция прервана")
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
     except Exception as e:
         logger.error(f"Ошибка: {e}", exc_info=True)
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
 
 
@@ -1670,14 +1670,14 @@ async def send_message_all_menu():
             if manager:
                 try:
                     await manager.disconnect()
-                except:
+                except Exception:
                     pass
         except KeyboardInterrupt:
             print("\n\n⚠️  Операция прервана пользователем")
             if manager:
                 try:
                     await manager.disconnect()
-                except:
+                except Exception:
                     pass
             break
         except Exception as e:
@@ -1691,7 +1691,7 @@ async def send_message_all_menu():
             if manager:
                 try:
                     await manager.disconnect()
-                except:
+                except Exception:
                     pass
     
     print("─" * 50)
@@ -1750,13 +1750,13 @@ async def start_bot_menu():
         print("\n\n⚠️  Операция прервана")
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
     except Exception as e:
         logger.error(f"Ошибка: {e}", exc_info=True)
         try:
             await manager.disconnect()
-        except:
+        except Exception:
             pass
 
 
@@ -1817,14 +1817,14 @@ async def start_bot_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
             except KeyboardInterrupt:
                 print("\n\n⚠️  Операция прервана пользователем")
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
                 return
             except Exception as e:
@@ -1840,7 +1840,7 @@ async def start_bot_all_menu():
                 if manager:
                     try:
                         await manager.disconnect()
-                    except:
+                    except Exception:
                         pass
         
         print("─" * 50)
@@ -1928,21 +1928,21 @@ async def send_report_menu():
         if manager:
             try:
                 await manager.disconnect()
-            except:
+            except Exception:
                 pass
     except KeyboardInterrupt:
         print("\n\n⚠️  Операция прервана")
         if manager:
             try:
                 await manager.disconnect()
-            except:
+            except Exception:
                 pass
     except Exception as e:
         logger.error(f"Ошибка: {e}", exc_info=True)
         if manager:
             try:
                 await manager.disconnect()
-            except:
+            except Exception:
                 pass
 
 
@@ -2011,14 +2011,14 @@ async def send_report_all_menu():
             if manager:
                 try:
                     await manager.disconnect()
-                except:
+                except Exception:
                     pass
         except KeyboardInterrupt:
             print("\n\n⚠️  Операция прервана пользователем")
             if manager:
                 try:
                     await manager.disconnect()
-                except:
+                except Exception:
                     pass
             return
         except Exception as e:
@@ -2033,7 +2033,7 @@ async def send_report_all_menu():
             if manager:
                 try:
                     await manager.disconnect()
-                except:
+                except Exception:
                     pass
     
     print("─" * 50)
