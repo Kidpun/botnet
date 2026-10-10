@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  botnet:
+    build: .
+    container_name: tg_botnet_cli
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./sessions:/app/sessions
+      - ./proxy.txt:/app/proxy.txt
+    env_file:
+      - .env
